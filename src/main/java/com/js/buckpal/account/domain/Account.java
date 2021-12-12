@@ -1,20 +1,31 @@
 package com.js.buckpal.account.domain;
 
-import java.time.LocalDateTime;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Value;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 @Getter
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {
 
     private final AccountId id;
     private final Money baselineBalance;
     private final ActivityWindow activityWindow;
 
-    private Account(AccountId id, Money baselineBalance, ActivityWindow activityWindow) {
-        this.id = id;
-        this.baselineBalance = baselineBalance;
-        this.activityWindow = activityWindow;
+    public static Account withoutId(Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(null, baselineBalance, activityWindow);
+    }
+
+    public static Account withId(AccountId accountId, Money baselineBalance, ActivityWindow activityWindow) {
+        return new Account(accountId, baselineBalance, activityWindow);
+    }
+
+    public Optional<AccountId> getId() {
+        return Optional.ofNullable(this.id);
     }
 
     public Money calculateBalance() {

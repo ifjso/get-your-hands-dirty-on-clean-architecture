@@ -2,9 +2,12 @@ package com.js.buckpal.account.domain;
 
 import com.js.buckpal.account.domain.Account.AccountId;
 import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class Activity {
 
     private final ActivityId id;

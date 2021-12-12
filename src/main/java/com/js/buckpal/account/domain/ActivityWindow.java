@@ -1,6 +1,8 @@
 package com.js.buckpal.account.domain;
 
 import com.js.buckpal.account.domain.Account.AccountId;
+
+import java.util.Collections;
 import java.util.List;
 
 public class ActivityWindow {
@@ -23,6 +25,10 @@ public class ActivityWindow {
             .reduce(Money.ZERO, Money::add);
 
         return Money.add(depositBalance, withdrawalBalance.negate());
+    }
+
+    public List<Activity> getActivities() {
+        return Collections.unmodifiableList(this.activities);
     }
 
     public void addActivity(Activity activity) {
