@@ -4,14 +4,13 @@ import com.js.buckpal.account.application.port.out.LoadAccountPort;
 import com.js.buckpal.account.application.port.out.UpdateAccountStatePort;
 import com.js.buckpal.account.domain.Account;
 import com.js.buckpal.account.domain.Activity;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-
-import javax.persistence.EntityNotFoundException;
+import com.js.buckpal.common.PersistenceAdapter;
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 
-@Component
+@PersistenceAdapter
 @RequiredArgsConstructor
 class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccountStatePort {
 
