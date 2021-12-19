@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-class SendMoneyController {
+public class SendMoneyController {
 
     private final SendMoneyUseCase sendMoneyUseCase;
 

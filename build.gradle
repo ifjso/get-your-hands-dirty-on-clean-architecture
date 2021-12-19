@@ -30,6 +30,7 @@ dependencies {
     }
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testImplementation 'org.mockito:mockito-junit-jupiter:4.1.0'
+    testImplementation 'com.tngtech.archunit:archunit:0.22.0'
     testImplementation 'com.h2database:h2:2.0.202'
 }
 
