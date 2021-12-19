@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component                  // TODO move config
-public class MoneyTransferProperties {
+class MoneyTransferProperties {
 
     private Money maximumTransferThreshold = Money.of(1_000_000L);
 }

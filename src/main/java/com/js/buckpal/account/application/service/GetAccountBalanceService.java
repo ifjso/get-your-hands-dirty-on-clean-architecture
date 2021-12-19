@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class GetAccountBalanceService implements GetAccountBalanceQuery {
+class GetAccountBalanceService implements GetAccountBalanceQuery {
 
     private final LoadAccountPort loadAccountPort;
 
